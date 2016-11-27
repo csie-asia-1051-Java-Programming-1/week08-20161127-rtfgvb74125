@@ -19,26 +19,29 @@ public class ex02 {
 		fun(n, m, x);
 	}
 
-	public static void fun(double n, int m, int x) {
+	public static void fun(int n, int m, int x) {
 		int sum = 0;
 		int sum1 = 0;
 		int sum2 = 0;
 		int a = 1;
-		
-		double b = 0;
-		for (int i = 0; i < m; i++) {
+		int b = 0;
+		for (int i = 1; n>0; i*=m) {
 			sum = (int) (n%10);
-			 b = (int) b+(sum*(Math.pow(m, i)));
+			 b = b+(sum*i) ;
 			 n = n/10;
+			 
 		}
+		//System.out.print(b);
 		while (b > 0) {
-			sum2 = (int) (b % x);
+			
+			sum1 =  b % x;
 			b =  b/ x;
-			sum1 = sum1 + (sum2 * a);
-			a = a * 10;
-
+			sum2 = sum2+(sum1*a);
+			a = a*10;
+			
+			
 		}
-		System.out.print(sum1);
+		System.out.print(sum2);
 
 	}
 
